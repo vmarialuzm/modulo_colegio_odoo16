@@ -1,0 +1,49 @@
+<!-- views/school_student_views.xml -->
+
+<odoo>
+    <data>
+        <!-- Student Tree View -->
+        <record id="view_school_student_tree" model="ir.ui.view">
+            <field name="name">school.student.tree</field>
+            <field name="model">school.student</field>
+            <field name="arch" type="xml">
+                <tree string="School Students">
+                    <field name="name"/>
+                    <field name="birth_date"/>
+                    <field name="age"/>
+                    <field name="final_exam_grade"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Student Form View -->
+        <record id="view_school_student_form" model="ir.ui.view">
+            <field name="name">school.student.form</field>
+            <field name="model">school.student</field>
+            <field name="arch" type="xml">
+                <form string="School Student">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="birth_date"/>
+                            <field name="age"/>
+                            <field name="final_exam_grade"/>
+                            <field name="subject_ids" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Student Action -->
+        <record id="action_school_student" model="ir.actions.act_window">
+            <field name="name">Students</field>
+            <field name="res_model">school.student</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Student Menu Item -->
+        <menuitem id="menu_school_student" name="Students"
+                  action="action_school_student"/>
+    </data>
+</odoo>

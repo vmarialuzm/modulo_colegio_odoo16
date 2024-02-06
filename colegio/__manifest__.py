@@ -1,0 +1,21 @@
+{
+    'name': 'School Management',
+    'version': '1.0',
+    'summary': 'Module for managing school related data',
+    'sequence': 10,
+    'description': 'Manage students, subjects, and teachers data',
+    'category': 'Education',
+    'author': 'Luz Vivanco',
+    'website': 'https://www.linkedin.com/in/luz-maria-vivanco-merino/',
+    'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/school_student_view.xml',
+        'views/school_subject_view.xml',
+        'views/school_teacher_view.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}
